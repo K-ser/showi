@@ -1,0 +1,115 @@
+@use 'sass:color';
+// color.adjust(v.$gris, $lightness: -30%)
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+header {
+    position: relative;
+    background-image: url(../../src/img/intro-bg.jpg);
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.header {
+    height: 10rem;
+    padding: 2rem 0;
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        width: 16rem;
+    }
+}
+
+.main-nav {
+    background-color: v.$dark-navy;
+    width: 20rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2rem 3rem;
+    transform: translateX(100%);
+    transition: all .2s linear;
+
+    h3 {
+        color: v.$gray;
+        opacity: .8;
+        font-size: 2.2rem;
+        text-align: left;
+        margin-bottom: 3.5rem;
+    }
+    
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        @include m.tablet {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+        }
+
+        a {
+            font-size: 1.8rem;
+            color: v.$gray;
+            opacity: .5;
+            transition: all .3s ease;
+            &:hover {
+                color: v.$white;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.nav-button {
+    height: 4rem;
+    width: 4rem;
+    background-color: v.$dark-navy;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s linear;
+
+    .menu-bar {
+        height: .5rem;
+        width: 3.5rem;
+        background-color: v.$white;
+        border-radius: 10px;
+        transform-origin: center;   
+        transition: all .2s linear;
+    }
+}
+
+#nav-menu {
+    opacity: 0;
+    display: none;
+}
+
+#nav-menu:checked ~ .nav-button  {
+    right: 22rem;
+
+    .menu-bar:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 7px);
+    }
+    .menu-bar:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }   
+    .menu-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -7px);
+    }
+}
+
+#nav-menu:checked ~ .main-nav {
+    transform: translateX(0);
+}

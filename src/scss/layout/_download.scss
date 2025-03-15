@@ -1,0 +1,34 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+.download-app {
+    background-color: v.$dark-navy;
+    padding: 10rem 0;
+    text-align: center;
+    color: v.$white;
+    
+    h2 {
+        font-family: v.$second-font;
+        font-size: 5rem;
+    }
+    
+    p {
+        width: 80%;
+        max-width: 100rem;
+        text-align: center;
+        margin: 0 auto;
+        color: v.$oxford    ;
+    }
+
+    a {
+        @include m.button(v.$white, inline-block);
+        padding: 2rem 4rem;
+        color: v.$dark-navy;
+        letter-spacing: 1.5px;
+        font-size: 1.5rem;
+        margin-top: 5rem;
+    }
+
+
+}

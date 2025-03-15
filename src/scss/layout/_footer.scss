@@ -1,0 +1,62 @@
+@use 'sass:color';
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.footer {
+    background-color: color.adjust(v.$black, $lightness: 8%);
+    padding: 5rem 0 2rem 0;
+
+    .rights {
+        color: v.$oxford;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: v.$regular;
+        margin: 3rem 0 0 0;
+    }
+}
+.social-networks {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    img {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(52deg) brightness(110%) contrast(101%);
+        width: 4.5rem;
+        &:hover {
+            filter: invert(100%) sepia(90%) saturate(1753%) hue-rotate(321deg) brightness(106%) contrast(95%);
+        }
+    }
+}
+
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 85%;
+    margin: 7rem auto 0 auto;
+    color: v.$white;
+
+    h3, p {
+        text-align: center;
+    }
+    
+    h3 {
+        margin-bottom: 2rem;
+        font-size: 2.1rem;
+        display: inline-block;
+    }
+    
+    p {
+        color: v.$oxford;
+        font-size: 1.7rem;
+    }
+
+    img {
+        width: 1.8rem;
+        display: inline-block;
+        filter: invert(100%) sepia(6%) saturate(7472%) hue-rotate(293deg) brightness(104%) contrast(96%);
+        margin-right: .5rem;
+    }
+}

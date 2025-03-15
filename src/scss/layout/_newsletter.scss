@@ -1,0 +1,46 @@
+@use 'sass:color';
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.newsletter {
+    background-color: color.adjust(v.$dark-navy, $lightness: -2%);
+    color: v.$white;
+    padding: 8rem 0;
+    text-align: center;
+
+    .newsletter-header {
+        font-size: 3rem;
+        font-weight: v.$bold;
+    }
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    max-width: 60%;
+    margin: 3rem auto;
+    input[type="email"] {
+        background-color: color.adjust(v.$dark-navy, $lightness: -5%);
+        border: none;
+        border-radius: 0;
+        padding: 1.7rem;
+        width: 65%;
+        font-size: 1.5rem;
+    }
+
+    input[type="button"] {
+        @include m.button(v.$white, inline-block);
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: color.adjust(v.$dark-navy, $lightness: -5%);
+        font-size: 1.1rem;
+        width: 35%;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background-color: v.$yellow;
+        }
+    }
+}

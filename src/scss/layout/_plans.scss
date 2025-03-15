@@ -1,0 +1,178 @@
+@use 'sass:color';
+// color.adjust(v.gris, lightness: -30%)
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.plans-secction {
+    background-color: v.$gray;
+}
+
+.plans {
+    padding-top: 10rem;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    .plans-title {
+        font-family: v.$second-font;
+        color: v.$dark-navy;
+        margin: 0;
+        font-size: 5rem;
+        font-weight: v.$bold;
+    }
+
+    .plans-text {
+        color: v.$oxford;
+        line-height: 2;
+        opacity: .8;
+    }
+
+    &::after {
+        display: block;
+        content: ' ';
+        width: 11rem;
+        height: .3rem;
+        background-color: v.$dark-navy;
+        margin: 5rem auto;
+        border-radius: 50px;
+    }
+}
+
+.plans-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    padding-bottom: 10rem;
+    @include m.tablet {
+        @include m.grid(3, 00rem);
+        margin: 0 auto;
+        padding-bottom: 7rem;
+        width: 90%;
+        justify-items: center;
+    }
+}
+
+.plan-card {
+    background-color: v.$white;
+    padding: 5rem;
+    position: relative;
+    width: 32rem;
+
+    .plan-name {
+        font-size: 2.5rem;
+        margin: 3rem 0 0 0;
+        &::after {
+            content: ' ';
+            width: 9rem;
+            height: .2rem;
+            background-color: v.$dark-navy;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 50px;
+        }
+    }
+    
+    .price {
+        margin: 0;
+        text-align: center;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        color: color.adjust(v.$black, $lightness: 30%);
+        span {
+            color: v.$black;
+            display: block;
+            font-family: v.$second-font;
+            font-size: 5.5rem;
+            font-weight: v.$bold;
+            display: flex;
+            justify-content: center;
+            gap: .5rem;
+
+            &::before {
+                content: '$';
+                font-size: 2.5rem;
+                color: v.$black;
+                font-weight: v.$bold;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 5rem 0;
+        padding: 0;
+        text-align: center;
+        li {
+            border-bottom: 1px solid color.adjust(v.$gray, $lightness: -20%);
+
+            &:last-of-type {
+                border: none;
+            }
+        }
+        p {
+            font-size: 1.6rem;
+            color: color.adjust(v.$oxford, $lightness: 30%);
+            margin: 1.5rem;
+
+            strong {
+                color: black;
+            }
+        }
+    }
+
+    a {
+        @include m.button(v.$navy, block);
+        text-transform: uppercase;
+        padding: 1.7rem;
+        font-weight: v.$bold;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        margin: 0 2rem;
+    }
+
+    &:nth-child(2) {
+        background-color: v.$navy;
+        color: v.$white;
+
+        .plan-name::after {
+            background-color: v.$oxford;
+        }
+
+        .price {
+            color: color.adjust(v.$gray, $lightness: -30%);
+            span {
+                color: v.$white;
+                &::before {
+                    color: v.$white;
+                }
+            }
+        }
+
+        strong {
+            color: v.$white;
+        }
+
+        a {
+            background-color: color.adjust(v.$gray, $lightness: 15%);
+            color: v.$dark-navy;
+        }
+
+        &::before {
+            content: 'Popular';
+            text-transform: uppercase;
+            background-color: v.$cherry;
+            text-align: center;
+            align-content: center;
+            width:60%;
+            height: 8%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: v.$white;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            font-weight: v.$bold;
+        }
+    }
+}

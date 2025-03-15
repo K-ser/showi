@@ -1,0 +1,40 @@
+@use 'sass:color';
+// color.adjust(v.gris, lightness: -30%)
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.hero {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    p {
+        color: v.$gray;
+        font-weight: v.$bold;
+        font-size: 2rem;
+        letter-spacing: .3rem;
+        margin-top: 7rem;
+        opacity: .8;
+        text-transform: uppercase;
+    }
+    h1 {
+        color: v.$cherry;
+        margin-bottom: 3rem;
+        font-family: v.$second-font
+    }
+
+    .hero-button {
+        @include m.button(transparent, inline);
+        border: 3px solid color.adjust(v.$gray, $lightness: -30%);
+        padding: 1.5rem 3.5rem;
+        margin-bottom: 5rem;
+        &:first-of-type {
+            margin-right: 3rem;
+        }
+        
+        a {
+            color: v.$gray;
+            letter-spacing: .2rem;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@use 'sass:color';
+// color.adjust(v.gris, lightness: -30%)
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.features {
+    background-color: v.$yellow;
+    text-align: center;
+    padding: 15rem 0;
+
+    .features-title {
+        font-family: v.$second-font;
+    }
+    .features-text {
+        margin: 0 15%;
+        color: color.adjust(v.$gray, $lightness: -50%);
+        &::after {
+            display: block;
+            content: ' ';
+            width: 10rem;
+            height: .3rem;
+            margin: 3rem auto;
+            background-color: v.$navy;
+        }
+    }
+}
+
+.features-grid {
+    text-align: start;
+    @include m.grid(3, 3rem);
+    // row-gap: 5rem;
+    margin-top: 5rem;
+}
+
+.feature {
+    span {
+        color: v.$cherry;
+        font-size: 4rem;
+        font-weight: v.$bold;
+    }
+
+    .feature-title {
+        font-weight: v.$bold;
+    }
+
+    .feature-description {
+        font-size: 1.7rem;
+        line-height: 2;
+    }
+}
