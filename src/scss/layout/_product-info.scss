@@ -21,11 +21,11 @@
 }
 
 .product-info__content {
+    padding: 10rem 6rem;
+    height: 100%;
     @include m.desktop {
         max-width: 50%;
     }
-    height: 100%;
-    padding: 10rem 6rem;
 
     .content-recommendation {
         color: color.adjust(v.$oxford, $lightness: 40%);
@@ -74,13 +74,13 @@
 .product-info__image,
 .product-info__video {
     @include m.desktop {
+        padding: 10rem 6rem 10rem 0;
         max-width: 100%;
         width: 100%;
         display: grid;
         align-items: center;
         height: 100%;
     }
-    padding: 10rem 6rem 10rem 0;
 
     img {
         height: 80%;

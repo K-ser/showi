@@ -315,6 +315,7 @@ template {
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -393,9 +394,11 @@ header {
   position: relative;
   background-image: url(../../src/img/intro-bg.jpg);
   height: auto;
+  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  overflow-x: hidden;
 }
 
 .header {
@@ -417,6 +420,7 @@ header {
   background-color: #001835;
   width: 20rem;
   position: absolute;
+  z-index: 1;
   right: 0;
   top: 0;
   padding: 2rem 3rem;
@@ -438,9 +442,12 @@ header {
 @media (min-width: 768px) {
   .main-nav ul {
     display: flex;
-    gap: 2rem;
     flex-direction: column;
+    gap: 2rem;
   }
+}
+.main-nav ul li {
+  margin: 1.5rem 0;
 }
 .main-nav ul a {
   font-size: 1.8rem;
@@ -614,8 +621,8 @@ header {
 }
 
 .product-info__content {
-  height: 100%;
   padding: 10rem 6rem;
+  height: 100%;
 }
 @media (min-width: 992px) {
   .product-info__content {
@@ -672,13 +679,10 @@ header {
   cursor: pointer;
 }
 
-.product-info__image,
-.product-info__video {
-  padding: 10rem 6rem 10rem 0;
-}
 @media (min-width: 992px) {
   .product-info__image,
   .product-info__video {
+    padding: 10rem 6rem 10rem 0;
     max-width: 100%;
     width: 100%;
     display: grid;

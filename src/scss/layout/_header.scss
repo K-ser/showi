@@ -7,9 +7,11 @@ header {
     position: relative;
     background-image: url(../../src/img/intro-bg.jpg);
     height: auto;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    overflow-x: hidden;
 }
 .header {
     height: 10rem;
@@ -29,6 +31,7 @@ header {
     background-color: v.$dark-navy;
     width: 20rem;
     position: absolute;
+    z-index: 1;
     right: 0;
     top: 0;
     padding: 2rem 3rem;
@@ -49,8 +52,11 @@ header {
         list-style: none;
         @include m.tablet {
             display: flex;
-            gap: 2rem;
             flex-direction: column;
+            gap: 2rem;
+        }
+        li {
+            margin: 1.5rem 0;
         }
 
         a {
