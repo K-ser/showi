@@ -8,8 +8,13 @@
     background-color: v.$dark-navy;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    height: 30rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 30rem;
+    padding: 5rem;
+    @include m.desktop {
+        padding: 5rem 10rem;
+    }
 }
 
 .stat {

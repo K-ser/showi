@@ -43,7 +43,7 @@
     justify-content: center;
     gap: 3rem;
     padding-bottom: 10rem;
-    @include m.tablet {
+    @include m.desktop {
         @include m.grid(3, 00rem);
         margin: 0 auto;
         padding-bottom: 7rem;

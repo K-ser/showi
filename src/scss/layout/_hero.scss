@@ -29,7 +29,9 @@
         padding: 1.5rem 3.5rem;
         margin-bottom: 5rem;
         &:first-of-type {
-            margin-right: 3rem;
+            @include m.tablet{
+                margin-right: 3rem;
+            }
         }
         
         a {

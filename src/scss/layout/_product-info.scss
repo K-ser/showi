@@ -4,9 +4,12 @@
 @use 'base/mixins' as m;
 
 .product-info__container {
-    display: flex;
-    align-items: center;
-    height: 60rem;
+    
+    @include m.desktop {
+        height: 60rem;
+        display: flex;
+        align-items: center;
+    }
     
     &:nth-child(even) {
         flex-direction: row-reverse;
@@ -18,7 +21,9 @@
 }
 
 .product-info__content {
-    max-width: 50%;
+    @include m.desktop {
+        max-width: 50%;
+    }
     height: 100%;
     padding: 10rem 6rem;
 
@@ -68,11 +73,13 @@
 
 .product-info__image,
 .product-info__video {
-    height: 100%;
-    max-width: 100%;
-    width: 100%;
-    display: grid;
-    align-items: center;
+    @include m.desktop {
+        max-width: 100%;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        height: 100%;
+    }
     padding: 10rem 6rem 10rem 0;
 
     img {
@@ -81,11 +88,27 @@
 }
 
 .product-info__video {
+    min-height: 40rem;
     position: relative;
-    padding: 10rem 0 10rem 6rem;
+    padding: 10rem 6rem;
+    @include m.tablet {
+        min-height: 50rem;
+    }
+    @include m.desktop {
+        padding: 10rem 0 10rem 6rem;
+    }
 
     div {
-        position: absolute;
-        right: 0;
+        @include m.tablet {
+            text-align: center;
+            iframe {
+                width: 50rem;
+                height: 30rem;
+            }
+        }
+        @include m.desktop {
+            position: absolute;
+            right: 0;
+        }
     }
 }

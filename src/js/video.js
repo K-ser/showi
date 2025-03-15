@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 // Cargar el iframe cuando el contenedor es visible
                 videoContainer.innerHTML = `
-                    <iframe 
-                    width="500" 
-                    height="315" 
+                    <iframe  
                     src="https://www.youtube.com/embed/SSqgaFE9igo?si=LWrUKvtolvipBOwv" 
                     title="YouTube video player" 
                     frameborder="0" 

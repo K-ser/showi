@@ -18,15 +18,26 @@
 .form {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    // align-items: center;
     max-width: 60%;
     margin: 3rem auto;
+
+    @include m.tablet {
+        flex-direction: row;
+    }
     input[type="email"] {
         background-color: color.adjust(v.$dark-navy, $lightness: -5%);
         border: none;
         border-radius: 0;
         padding: 1.7rem;
-        width: 65%;
+        width: 100%;
         font-size: 1.5rem;
+        margin-bottom: 3rem;
+        @include m.tablet {
+            width: 65%;
+            margin-bottom: 0;
+        }
     }
 
     input[type="button"] {
@@ -36,8 +47,11 @@
         letter-spacing: 2px;
         color: color.adjust(v.$dark-navy, $lightness: -5%);
         font-size: 1.1rem;
-        width: 35%;
+        width: 100%;
         transition: .3s ease-in-out;
+        @include m.tablet {
+            width: 35%;
+        }
 
         &:hover {
             background-color: v.$yellow;

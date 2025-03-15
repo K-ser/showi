@@ -70,7 +70,8 @@ header {
     height: 4rem;
     width: 4rem;
     background-color: v.$dark-navy;
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     right: 2rem;
     top: 2rem;
     display: flex;
