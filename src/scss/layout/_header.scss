@@ -1,5 +1,4 @@
 @use 'sass:color';
-// color.adjust(v.$gris, $lightness: -30%)
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
@@ -11,16 +10,13 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    // overflow-x: hidden;
 }
 .header {
     height: 10rem;
     padding: 2rem 0;
-    @include m.tablet {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .logo {
         width: 16rem;
@@ -30,8 +26,7 @@ header {
 .main-nav {
     background-color: v.$dark-navy;
     width: 20rem;
-    position: absolute;
-    z-index: 1;
+    position: fixed;
     right: 0;
     top: 0;
     padding: 2rem 3rem;
@@ -50,13 +45,11 @@ header {
         padding: 0;
         margin: 0;
         list-style: none;
-        @include m.tablet {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         li {
-            margin: 1.5rem 0;
+            margin-bottom: 1.5rem;
         }
 
         a {
@@ -76,10 +69,6 @@ header {
     height: 4rem;
     width: 4rem;
     background-color: v.$dark-navy;
-    position: fixed;
-    z-index: 1;
-    right: 2rem;
-    top: 2rem;
     display: flex;
     flex-direction: column;
     gap: .6rem;
@@ -103,7 +92,10 @@ header {
 }
 
 #nav-menu:checked ~ .nav-button  {
-    right: 22rem;
+    translate: -18rem;
+    @include m.tablet {
+        translate: -21rem;
+    }
 
     .menu-bar:nth-child(1) {
         transform: rotate(45deg) translate(8px, 7px);
@@ -117,6 +109,7 @@ header {
     }
 }
 
-#nav-menu:checked ~ .main-nav {
+#nav-menu:checked  ~ .main-nav {
+    z-index: 3;
     transform: translateX(0);
 }

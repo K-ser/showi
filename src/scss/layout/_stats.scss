@@ -1,24 +1,26 @@
 @use 'sass:color';
-// color.adjust(v.gris, lightness: -30%)
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
 
-.stats-container {
+.stats-secction {
     background-color: v.$dark-navy;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+}
+.stats-container {
+    @include m.grid(2, 2rem);
+    justify-items: center;
     min-height: 30rem;
-    padding: 5rem;
+    padding: 5rem 0;
+    @include m.tablet {
+        @include m.grid(6, 2rem);
+    }
     @include m.desktop {
         padding: 5rem 10rem;
     }
 }
 
 .stat {
-    max-width: 9rem;
+    width: 9rem;
     min-height: 18.3rem;
     color: v.$white;
     display: flex;
@@ -42,7 +44,7 @@
             margin: 1rem auto;
         }
     }
-    
+
     h3, p {
         margin: 0;
     }

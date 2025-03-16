@@ -3,7 +3,6 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 *, 
 *:before,
@@ -18,7 +17,7 @@ body {
     color: v.$black;
     font-size: 2rem;
     background-color: v.$white;
-    // overflow-x: hidden;
+    // overflow: hidden;
 }
 
 p {
@@ -60,6 +59,24 @@ img {
 // body > section {
 //     padding: 10rem 0;
 // }
-// .flex {
-//     display: flex;
+// body > section:nth-of-type(1) {
+//     overflow-x: hidden;
+// }
+// body > section:nth-of-type(2) { 
+//     overflow-x: hidden;
+// }
+// body > section:nth-of-type(3) {
+//     overflow-x: hidden;
+// }
+// body > section:nth-of-type(4) {
+//     overflow-x: hidden;
+// }
+// body > section:nth-of-type(5) {
+//     overflow-x: hidden;
+// }
+// body > section:nth-of-type(6) {
+//     overflow-x: hidden;
+// }
+// body > section:nth-of-type(7) {
+//     overflow-x: hidden;
 // }

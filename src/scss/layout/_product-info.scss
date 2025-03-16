@@ -1,10 +1,12 @@
 @use 'sass:color';
-// color.adjust($v.gray, $lightness: -30%)
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+.product-info{
+    overflow-x: hidden;
+}
+
 .product-info__container {
-    
     @include m.desktop {
         height: 60rem;
         display: flex;

@@ -10,51 +10,52 @@
 </head>
 <body>
     <header>
+        <!-- Header -->
         <div class="container header">
             <div class="logo">
                 <img src="src/img/logo.png" alt="Showi">
             </div>
-        </div> <!-- .header -->
+            <!-- Boton que muestra/oculta la navegacion lateral -->
+            <input type="checkbox" id="nav-menu">
+            <label class="nav-button" for="nav-menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </label>
+    
+            <!-- Barra de navegacion que se muestra vertical en la derecha -->
+            <nav class="main-nav">
+                <h3>Navigation</h3>
+                <ul class="main-nav__list">
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Features</a>
+                    </li>
+                    <li>
+                        <a href="">Product info</a>
+                    </li>
+                    <li>
+                        <a href="">Stats</a>
+                    </li>
+                    <li>
+                        <a href="">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="">Download</a>
+                    </li>
+                    <li>
+                        <a href="">Newsletter</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
-        <!-- Boton que muestra/oculta la navegacion lateral -->
-        <input type="checkbox" id="nav-menu">
-        <label class="nav-button" for="nav-menu">
-            <span class="menu-bar"></span>
-            <span class="menu-bar"></span>
-            <span class="menu-bar"></span>
-        </label>
-
-        <!-- Barra de navegacion que se muestra vertical en la derecha -->
-        <nav class="main-nav">
-            <h3>Navigation</h3>
-            <ul class="main-nav__list">
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="">Features</a>
-                </li>
-                <li>
-                    <a href="">Product info</a>
-                </li>
-                <li>
-                    <a href="">Stats</a>
-                </li>
-                <li>
-                    <a href="">Pricing</a>
-                </li>
-                <li>
-                    <a href="">Testimonials</a>
-                </li>
-                <li>
-                    <a href="">Download</a>
-                </li>
-                <li>
-                    <a href="">Newsletter</a>
-                </li>
-            </ul>
-        </nav>
-
+        <!-- Hero -->
         <section class="hero" data-aos="fade-up">
             <!-- <div class="container"> -->
                 <p>Introducing Showi</p>
@@ -71,7 +72,6 @@
                     <img src="src/img/app-screenshot-big.jpg" alt="App screenshot">
                 </div>
             <!-- </div> -->
-    
         </section>
     </header>
 
@@ -117,7 +117,7 @@
         </div>
     </section>
 
-    <section class=" product-info">
+    <section class="product-info">
         <div class="product-info__container">
             <div class="product-info__content" data-aos="fade-right">
                 <p class="content-recommendation">Some cool Stuff</p>
@@ -147,55 +147,53 @@
         </div>
     </section>
 
-    <section class="stats-container">
-        <div class="stat">
-            <div class="stat-icon">
-                <img src="src/icons/stats/projects.svg" alt="projects">
-                
+    <section class="stats-secction">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="stat-icon">
+                        <img src="src/icons/stats/projects.svg" alt="projects">
+                    </div>
+                    <h3 class="stat-number">110</h3>
+                    <p class="stat-description">Awesome Projects</p>
+                </div> <!-- .stat -->
+                <div class="stat">
+                    <div class="stat-icon">
+                        <img src="src/icons/stats/client.svg" alt="clients">
+                    </div>
+                    <h3 class="stat-number">9050</h3>
+                    <p class="stat-description">Clients serverd</p>
+                </div> <!-- .stat -->
+                <div class="stat">
+                    <div class="stat-icon">
+                        <img src="src/icons/stats/award.svg" alt="awards">
+                    </div>
+                    <h3 class="stat-number">210</h3>
+                    <p class="stat-description">Awards recived</p>
+                </div> <!-- .stat -->
+                <div class="stat">
+                    <div class="stat-icon">
+                        <img src="src/icons/stats/idea.svg" alt="Ideas">
+                    </div>
+                    <h3 class="stat-number">123</h3>
+                    <p class="stat-description">Crazy ideas</p>
+                </div> <!-- .stat -->
+                <div class="stat">
+                    <div class="stat-icon">
+                        <img src="src/icons/stats/coffe.svg" alt="coffee-icon">
+                    </div>
+                    <h3 class="stat-number">1500</h3>
+                    <p class="stat-description">Coffee cups</p>
+                </div> <!-- .stat -->
+                <div class="stat">
+                    <div class="stat-icon">
+                        <img src="src/icons/stats/hours.svg" alt="Clock">
+                    </div>
+                    <h3 class="stat-number">7200</h3>
+                    <p class="stat-description">Hours</p>
+                </div> <!-- .stat -->
             </div>
-            <h3 class="stat-number">110</h3>
-            <p class="stat-description">Awesome Projects</p>
-        </div> <!-- .stat -->
-        <div class="stat">
-            <div class="stat-icon">
-                <img src="src/icons/stats/client.svg" alt="clients">
-                
-            </div>
-            <h3 class="stat-number">9050</h3>
-            <p class="stat-description">Clients serverd</p>
-        </div> <!-- .stat -->
-        <div class="stat">
-            <div class="stat-icon">
-                <img src="src/icons/stats/award.svg" alt="awards">
-                
-            </div>
-            <h3 class="stat-number">210</h3>
-            <p class="stat-description">Awards recived</p>
-        </div> <!-- .stat -->
-        <div class="stat">
-            <div class="stat-icon">
-                <img src="src/icons/stats/idea.svg" alt="Ideas">
-                
-            </div>
-            <h3 class="stat-number">123</h3>
-            <p class="stat-description">Crazy ideas</p>
-        </div> <!-- .stat -->
-        <div class="stat">
-            <div class="stat-icon">
-                <img src="src/icons/stats/coffe.svg" alt="coffee-icon">
-                
-            </div>
-            <h3 class="stat-number">1500</h3>
-            <p class="stat-description">Coffee cups</p>
-        </div> <!-- .stat -->
-        <div class="stat">
-            <div class="stat-icon">
-                <img src="src/icons/stats/hours.svg" alt="Clock">
-                
-            </div>
-            <h3 class="stat-number">7200</h3>
-            <p class="stat-description">Hours</p>
-        </div> <!-- .stat -->
+        </div>
     </section>
 
     <section class="plans-secction">
