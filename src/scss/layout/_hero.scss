@@ -22,17 +22,22 @@
         margin-bottom: 3rem;
         font-family: v.$second-font
     }
+    .hero-buttons_container {
+        display: flex;
+        justify-content: center;
+        gap: .5rem;
+        margin-bottom: 4rem;
+        flex-direction: column;
+        @include m.tablet {
+            flex-direction: row;
+            gap: 3rem;
+        }
+    }
 
     .hero-button {
-        @include m.button(transparent, inline);
+        @include m.button(transparent, inline-block);
         border: 3px solid color.adjust(v.$gray, $lightness: -30%);
         padding: 1.5rem 3.5rem;
-        margin-bottom: 5rem;
-        &:first-of-type {
-            @include m.tablet{
-                margin-right: 3rem;
-            }
-        }
         
         a {
             color: v.$gray;

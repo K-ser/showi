@@ -9,47 +9,48 @@
     <link rel="stylesheet" href="build/css/app.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <!-- Header -->
         <div class="container header">
             <div class="logo">
                 <img src="src/img/logo.png" alt="Showi">
             </div>
+
             <!-- Boton que muestra/oculta la navegacion lateral -->
-            <input type="checkbox" id="nav-menu">
-            <label class="nav-button" for="nav-menu">
+            <!-- <input type="checkbox" id="nav-menu"> -->
+            <div class="nav-button">
                 <span class="menu-bar"></span>
                 <span class="menu-bar"></span>
                 <span class="menu-bar"></span>
-            </label>
-    
+            </div>
+
             <!-- Barra de navegacion que se muestra vertical en la derecha -->
             <nav class="main-nav">
                 <h3>Navigation</h3>
                 <ul class="main-nav__list">
                     <li>
-                        <a href="">Home</a>
+                        <a href="#header">Home</a>
                     </li>
                     <li>
-                        <a href="">Features</a>
+                        <a href="#features">Features</a>
                     </li>
                     <li>
-                        <a href="">Product info</a>
+                        <a href="#product-info">Product info</a>
                     </li>
                     <li>
-                        <a href="">Stats</a>
+                        <a href="#stats">Stats</a>
                     </li>
                     <li>
-                        <a href="">Pricing</a>
+                        <a href="#plans">Pricing</a>
                     </li>
                     <li>
-                        <a href="">Testimonials</a>
+                        <a href="#testimonials">Testimonials</a>
                     </li>
                     <li>
-                        <a href="">Download</a>
+                        <a href="#download-app">Download</a>
                     </li>
                     <li>
-                        <a href="">Newsletter</a>
+                        <a href="#footer">Newsletter</a>
                     </li>
                 </ul>
             </nav>
@@ -61,12 +62,10 @@
                 <p>Introducing Showi</p>
                 <h1>The perfect template to present your awesome product.</h1>
         
-                <button class="button hero-button">
-                    <a href="">Features</a>
-                </button>
-                <button class="button hero-button">
-                    <a href="">Download</a>
-                </button>
+                <div class="hero-buttons_container">
+                    <a href="#features" class="button hero-button">Features</a>
+                    <a href="#download-app" class="button hero-button">Download</a>
+                </div>
         
                 <div class="hero-demo">
                     <img src="src/img/app-screenshot-big.jpg" alt="App screenshot">
@@ -75,7 +74,7 @@
         </section>
     </header>
 
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div data-aos="fade-up">
                 <h2 class="features-title">Features You Will Love</h2>
@@ -117,7 +116,7 @@
         </div>
     </section>
 
-    <section class="product-info">
+    <section class="product-info" id="product-info">
         <div class="product-info__container">
             <div class="product-info__content" data-aos="fade-right">
                 <p class="content-recommendation">Some cool Stuff</p>
@@ -134,9 +133,7 @@
                 <p class="content-recommendation">Video Stuff</p>
                 <h3 class="">Your Super Cool Video</h3>
                 <p class="content-text">Lorem ipsum Sunt adipisicing adipisicing esse exercitation consequat sed irure commodo cupidatat aute ea adipisicing consectetur nulla consequat irure consectetur veniam sit sit qui reprehenderit officia sunt nulla elit nisi proident.</p>
-                <button class="button content-button">
-                    <a href="">Learn More</a>
-                </button>
+                <a href="" class=" content-button">Learn More</a>
             </div>
             <div class="product-info__video">
                 <div  id="video-container" data-aos="fade-right">
@@ -147,7 +144,7 @@
         </div>
     </section>
 
-    <section class="stats-secction">
+    <section class="stats-secction" id="stats">
         <div class="container">
             <div class="stats-container">
                 <div class="stat">
@@ -196,7 +193,7 @@
         </div>
     </section>
 
-    <section class="plans-secction">
+    <section class="plans-secction" id="plans">
         <div class="plans" data-aos="flip-up">
             <h2 class="plans-title">Plans and Pricing</h2>
             <p class="plans-text">Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p>
@@ -262,7 +259,7 @@
         </div>
     </section>
 
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <h3 class="testimonials-title" data-aos="zoom-in">Hear What Our Customers Say.</h3>
 
         <div class="testimonials-container" data-aos="zoom-in">
@@ -295,16 +292,16 @@
         </div>
     </section>
 
-    <section class="download-app">
+    <section class="download-app" id="download-app">
         <h2 class="download-title" data-aos="fade-up">Download Showi Now</h2>
         <p class="download-description" data-aos="fade-up" 
         data-aos-delay="200"
         data-aos-duration="800"
         >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat officia magnam quaerat impedit, tempora tempore ratione ad temporibus inventore fugit enim facere fuga. Pariatur laborum aut impedit ea neque obcaecati.</p>
-        <a class="button download-button" data-aos="fade-up">Download Showi</a>
+        <a href="#header" class="button download-button" data-aos="fade-up">Download Showi</a>
     </section>
 
-    <section class="newsletter">
+    <section class="newsletter" id="newsletter">
         <h2 class="newsletter-header">Stay up to date, join our newsletter</h2>
         <form action="" class="form" name="newsletter" data-aos="flip-up">
             <input type="email" placeholder="Enter your email">
@@ -313,7 +310,7 @@
         </form>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container" data-aos="zoom-in    ">
             <div class="social-networks">
                 <img src="src/icons/social-net/facebook.svg" alt="" >
@@ -364,6 +361,7 @@
         });
     </script>
     <script src="src/js/video.js"></script>
-    <script src="src/js/app.js"></script>
+    <script src="src/js/testimonials.js"></script>
+    <script src="src/js/navClose.js"></script>
 </body>
 </html>

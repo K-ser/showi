@@ -29,7 +29,7 @@
         opacity: 0;
         height: 0px;
         transition: opacity .5s ease-in-out, height .5s ease-in-out;
-        // interpolate-size: allow-keywords;
+        interpolate-size: allow-keywords;
     }
     
     .testimonial-wrap.active {

@@ -3,7 +3,6 @@
 @use 'base/mixins' as m;
 
 header {
-    position: relative;
     background-image: url(../../src/img/intro-bg.jpg);
     height: auto;
     width: 100%;
@@ -13,10 +12,12 @@ header {
 }
 .header {
     height: 10rem;
+    width: 95%;
     padding: 2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     .logo {
         width: 16rem;
@@ -24,7 +25,7 @@ header {
 }
 
 .main-nav {
-    background-color: v.$dark-navy;
+    background-color: color.adjust(v.$black, $lightness: 10%);
     width: 20rem;
     position: fixed;
     right: 0;
@@ -65,16 +66,29 @@ header {
     }
 }
 
+.main-nav.open {
+    z-index: 3;
+    transform: translateX(0);
+}
+
 .nav-button {
     height: 4rem;
     width: 4rem;
-    background-color: v.$dark-navy;
+    background-color: color.adjust(v.$black, $lightness: 10%);
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    z-index: 1;
+    margin-right: 1rem;
     display: flex;
     flex-direction: column;
     gap: .6rem;
     align-items: center;
     justify-content: center;
     transition: all .2s linear;
+    @include m.tablet {
+        margin-right: 0;
+    }
 
     .menu-bar {
         height: .5rem;
@@ -86,12 +100,7 @@ header {
     }
 }
 
-#nav-menu {
-    opacity: 0;
-    display: none;
-}
-
-#nav-menu:checked ~ .nav-button  {
+.nav-button.open-btn  {
     translate: -18rem;
     @include m.tablet {
         translate: -21rem;
@@ -107,9 +116,4 @@ header {
     .menu-bar:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -7px);
     }
-}
-
-#nav-menu:checked  ~ .main-nav {
-    z-index: 3;
-    transform: translateX(0);
 }

@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         testimonials.forEach((testimonial, i) => {
             testimonial.classList.remove('active');
             if ( i === index ) {
-                // setTimeout(() => {
-                //     testimonial.classList.add('active');
-                // }, 200);
                 testimonial.classList.add('active');
             }
         });
@@ -25,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if ( i === index) {
                 image.classList.add('active-img');
             }
+            image.addEventListener('click', () => {
+                showTestimonial(i);
+            })
         })
     }
 
@@ -43,5 +43,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     showTestimonial(currentIndex);
-    // startAutoSlide();
+    startAutoSlide();
 })

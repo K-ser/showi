@@ -315,6 +315,7 @@ template {
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -389,7 +390,6 @@ img {
 }
 
 header {
-  position: relative;
   background-image: url(../../src/img/intro-bg.jpg);
   height: auto;
   width: 100%;
@@ -400,17 +400,19 @@ header {
 
 .header {
   height: 10rem;
+  width: 95%;
   padding: 2rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .header .logo {
   width: 16rem;
 }
 
 .main-nav {
-  background-color: #001835;
+  background-color: rgb(25.5, 25.5, 25.5);
   width: 20rem;
   position: fixed;
   right: 0;
@@ -448,16 +450,31 @@ header {
   opacity: 1;
 }
 
+.main-nav.open {
+  z-index: 3;
+  transform: translateX(0);
+}
+
 .nav-button {
   height: 4rem;
   width: 4rem;
-  background-color: #001835;
+  background-color: rgb(25.5, 25.5, 25.5);
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  z-index: 1;
+  margin-right: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
   align-items: center;
   justify-content: center;
   transition: all 0.2s linear;
+}
+@media (min-width: 768px) {
+  .nav-button {
+    margin-right: 0;
+  }
 }
 .nav-button .menu-bar {
   height: 0.5rem;
@@ -468,33 +485,23 @@ header {
   transition: all 0.2s linear;
 }
 
-#nav-menu {
-  opacity: 0;
-  display: none;
-}
-
-#nav-menu:checked ~ .nav-button {
+.nav-button.open-btn {
   translate: -18rem;
 }
 @media (min-width: 768px) {
-  #nav-menu:checked ~ .nav-button {
+  .nav-button.open-btn {
     translate: -21rem;
   }
 }
-#nav-menu:checked ~ .nav-button .menu-bar:nth-child(1) {
+.nav-button.open-btn .menu-bar:nth-child(1) {
   transform: rotate(45deg) translate(8px, 7px);
 }
-#nav-menu:checked ~ .nav-button .menu-bar:nth-child(2) {
+.nav-button.open-btn .menu-bar:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
-#nav-menu:checked ~ .nav-button .menu-bar:nth-child(3) {
+.nav-button.open-btn .menu-bar:nth-child(3) {
   transform: rotate(-45deg) translate(8px, -7px);
-}
-
-#nav-menu:checked ~ .main-nav {
-  z-index: 3;
-  transform: translateX(0);
 }
 
 .hero {
@@ -516,6 +523,19 @@ header {
   margin-bottom: 3rem;
   font-family: "Domine", serif;
 }
+.hero .hero-buttons_container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .hero .hero-buttons_container {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
 .hero .hero-button {
   background-color: transparent;
   color: #ffffff;
@@ -524,20 +544,14 @@ header {
   padding: 1rem 3rem;
   text-align: center;
   margin-top: 2.5rem;
-  display: inline;
+  display: inline-block;
   border: none;
   border: 3px solid rgb(139.5, 139.5, 139.5);
   padding: 1.5rem 3.5rem;
-  margin-bottom: 5rem;
 }
 .hero .hero-button:hover {
   background-color: hsla(0, 0%, -5%, 0);
   cursor: pointer;
-}
-@media (min-width: 768px) {
-  .hero .hero-button:first-of-type {
-    margin-right: 3rem;
-  }
 }
 .hero .hero-button a {
   color: #D8D8D8;
@@ -981,6 +995,7 @@ header {
   opacity: 0;
   height: 0px;
   transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+  interpolate-size: allow-keywords;
 }
 .testimonials-container .testimonial-wrap.active {
   opacity: 1;
