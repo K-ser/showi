@@ -3,7 +3,7 @@
 @use 'base/mixins' as m;
 
 .product-info__container {
-    width: min-content;
+    overflow: hidden;
     @include m.desktop {
         height: 60rem;
         display: flex;

@@ -611,7 +611,7 @@ header {
 }
 
 .product-info__container {
-  width: min-content;
+  overflow: hidden;
 }
 @media (min-width: 992px) {
   .product-info__container {
