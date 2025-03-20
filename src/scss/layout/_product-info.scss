@@ -2,11 +2,8 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.product-info{
-    overflow-x: hidden;
-}
-
 .product-info__container {
+    width: min-content;
     @include m.desktop {
         height: 60rem;
         display: flex;
@@ -14,7 +11,7 @@
     }
     
     &:nth-child(even) {
-        flex-direction: row-reverse;
+        flex-direction: row-reverse;    
     }
     
     div:nth-child(even) {
@@ -101,8 +98,8 @@
     }
 
     div {
+        text-align: center;
         @include m.tablet {
-            text-align: center;
             iframe {
                 width: 50rem;
                 height: 30rem;

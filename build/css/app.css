@@ -610,10 +610,9 @@ header {
   line-height: 2;
 }
 
-.product-info {
-  overflow-x: hidden;
+.product-info__container {
+  width: min-content;
 }
-
 @media (min-width: 992px) {
   .product-info__container {
     height: 60rem;
@@ -718,10 +717,10 @@ header {
     padding: 10rem 0 10rem 6rem;
   }
 }
+.product-info__video div {
+  text-align: center;
+}
 @media (min-width: 768px) {
-  .product-info__video div {
-    text-align: center;
-  }
   .product-info__video div iframe {
     width: 50rem;
     height: 30rem;
